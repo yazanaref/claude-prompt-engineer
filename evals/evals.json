@@ -1,0 +1,40 @@
+{
+  "skill_name": "prompt-engineer",
+  "evals": [
+    {
+      "id": 1,
+      "name": "improve-inconsistent-json-extractor",
+      "prompt": "i have this prompt running in production through the api and it keeps giving me garbage sometimes - half the time it wraps the json in markdown backticks, half the time it adds 'Here is the extracted data:' before it, and occasionally it just refuses and asks me a clarifying question. can you fix it?\n\nprompt is:\n\"Extract the person's name, email, and company from this text and give it back as json: {text}\"",
+      "expected_output": "Diagnoses the symptoms (no format anchoring, no preamble suppression, no out-of-scope handling), rewrites with XML-delimited input, explicit JSON schema, instruction to skip preamble, and recommends API prefill with `{`. Shows before/after and explains the changes. Notes prefill is API-only.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "write-chatbot-system-prompt-from-scratch",
+      "prompt": "I'm building a customer support chatbot for my SaaS company (we make accounting software for freelancers, called Tallybook). It needs to answer billing and how-to questions, stay friendly but professional, never make up features that don't exist, and escalate to a human for anything about refunds or canceling. Can you write me the system prompt for this?",
+      "expected_output": "Produces a structured system prompt using the complex-prompt framework: role/task context, tone, explicit rules (including the refund/cancel escalation and the don't-invent-features guardrail with an 'out'), ideally an example, and output guidance. Delivered as a clean copy-pasteable artifact since it's a reusable system prompt. Brief explanation of design choices.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "debug-reasoning-failure-chat",
+      "prompt": "why does claude get this wrong? i paste this exact thing into the claude app and it keeps saying it can't determine the answer:\n\n'Jack is looking at Anne. Anne is looking at George. Jack is married, George is not, and we don't know if Anne is married. Is a married person looking at an unmarried person?'\n\nthe answer is yes. how do i prompt it so it actually gets it right?",
+      "expected_output": "Identifies this as a reasoning failure (model answers before working through cases). Recommends letting it reason step by step / enumerate the two cases for Anne before concluding. Provides a rewritten chat prompt (no prefill, since it's the app). Explains why the technique works. Should NOT just solve the puzzle and move on.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "reusable-template-with-variables",
+      "prompt": "I need a reusable prompt template for summarizing customer interview transcripts. Each time, I'll feed in a transcript and I want back: 3 key takeaways, any feature requests mentioned, and the overall sentiment. I run this through code so it should be a template I can drop a transcript into. Make it solid.",
+      "expected_output": "Produces a reusable template with a clear {TRANSCRIPT} placeholder wrapped in XML tags, structured output spec (takeaways, feature requests, sentiment), evidence-grounding so it doesn't invent feature requests, and probably a defined output format. Delivered as a file since it's a reusable template. Uses placeholder convention.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "name": "tighten-bloated-prompt",
+      "prompt": "this prompt works ok but its huge and i feel like its overkill. can you tighten it up without breaking it? its just for rewriting a sentence to be more concise.\n\n'You are an expert professional editor with 20 years of experience at top publishing houses. You have won numerous awards. I am going to give you a sentence. Your job, which is very important and which I need you to take seriously, is to make the sentence more concise. Please think very carefully step by step about how to make it concise. Consider every word. Then, after thinking carefully, please provide me with the more concise version of the sentence. Here is the sentence I would like you to make more concise: {sentence}'",
+      "expected_output": "Recognizes the task is simple and the prompt is over-engineered (unnecessary role inflation, needless step-by-step for a trivial task, repetition). Trims to a lean direct instruction with XML-delimited input. Explains what was cut and why the trimmed version is fine for a simple task. Demonstrates judgment over ritual.",
+      "files": []
+    }
+  ]
+}
