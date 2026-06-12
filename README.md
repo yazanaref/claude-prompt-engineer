@@ -57,7 +57,7 @@ The skill uses Anthropic's *progressive disclosure* pattern: only `SKILL.md` is 
 
 You invoke it manually (/prompt-engineer) or just ask for prompt help in the way you naturally would. Examples that will trigger it:
 
-- *"`/prompt-engineer~` Help me write a system prompt for a customer-support chatbot for my SaaS product."*
+- *"`/prompt-engineer` Help me write a system prompt for a customer-support chatbot for my SaaS product."*
 - *"My JSON extractor keeps wrapping the output in markdown backticks. Fix it."*
 - *"Why does Claude keep adding 'Here is the…' before every answer? How do I stop that?"*
 - *"Turn this into a reusable template I can run a transcript through."*
