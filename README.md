@@ -50,14 +50,14 @@ The skill uses Anthropic's *progressive disclosure* pattern: only `SKILL.md` is 
 ## Installation
 
 1. Download [`prompt-engineer.skill`](./prompt-engineer.skill) from this repo.
-2. In [Claude.ai](https://claude.ai), open **Settings → Capabilities → Skills**, then upload the `.skill` file. (For Claude Code, place the unpacked folder under `~/.claude/skills/`.)
+2. In [Claude.ai](https://claude.ai), open **Settings → Customize → Skills**, then upload the `.skill` file. (For Claude Code, place the unpacked folder under `~/.claude/skills/`.)
 3. That's it — the skill is now available to every conversation. It activates automatically when you ask for help with a prompt.
 
 ## Usage
 
-You don't invoke it manually. You just ask for prompt help in the way you naturally would. Examples that will trigger it:
+You invoke it manually (/prompt-engineer) or just ask for prompt help in the way you naturally would. Examples that will trigger it:
 
-- *"Help me write a system prompt for a customer-support chatbot for my SaaS product."*
+- *"`/prompt-engineer~` Help me write a system prompt for a customer-support chatbot for my SaaS product."*
 - *"My JSON extractor keeps wrapping the output in markdown backticks. Fix it."*
 - *"Why does Claude keep adding 'Here is the…' before every answer? How do I stop that?"*
 - *"Turn this into a reusable template I can run a transcript through."*
